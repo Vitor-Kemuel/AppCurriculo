@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, ScrollView, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import foto from './img/perfil_image.jpg'
+
+import Card from './components/Card';
 
 export default function App() {
 
@@ -43,37 +45,27 @@ export default function App() {
 
       <View style={styles.bory}>
 
-        <View style={styles.card}>
-          <View style={styles.card_header}>
-            <Text style={styles.card_title}>Formação</Text>
-          </View>
-          <View style={styles.card_content}>
-            <Text style={styles.info}>
-              Tecnologia em analise e desenvolvimento de sistemas{"\n"}
-              <Text style={styles.subinfo}>FATEC Rio Preto - Cursando 4ºPeriodo</Text>
-            </Text>
-          </View>
-        </View>
+        <Card titulo="Formação">
+          <Text style={styles.info}>
+            Tecnologia em analise e desenvolvimento de sistemas
+            <Text style={styles.subinfo}>{"\n"}FATEC Rio Preto - Cursando 4ºPeriodo</Text>
+          </Text>
+        </Card>
 
-        <View style={styles.card}>
-          <View style={styles.card_header}>
-            <Text style={styles.card_title}>Habilidades</Text>
-          </View>
-          <View style={styles.card_content}>
-            <Text style={styles.info}>
-              Back-End{"\n"}
-              <Text style={styles.subinfo}>PHP{"\n"}</Text>
-              <Text style={styles.subinfo}>Python{"\n"}</Text>
-              <Text style={styles.subinfo}>JavaScript{"\n"}</Text>
-            </Text>
-            <Text style={styles.info}>
-              Front-End{"\n"}
-              <Text style={styles.subinfo}>HTML 5{"\n"}</Text>
-              <Text style={styles.subinfo}>CSS 3{"\n"}</Text>
-              <Text style={styles.subinfo}>React Native</Text>
-            </Text>
-          </View>
-        </View>
+        <Card titulo="Habilidades">
+          <Text style={styles.info}>
+            Back-End
+            <Text style={styles.subinfo}>{"\n"}PHP</Text>
+            <Text style={styles.subinfo}>{"\n"}Python</Text>
+            <Text style={styles.subinfo}>{"\n"}JavaScript</Text>
+          </Text>
+          <Text style={styles.info}>
+            {"\n"}Front-End
+            <Text style={styles.subinfo}>{"\n"}HTML 5</Text>
+            <Text style={styles.subinfo}>{"\n"}CSS 3</Text>
+            <Text style={styles.subinfo}>{"\n"}React Native</Text>
+          </Text>
+        </Card>
 
       </View>
       <StatusBar style="auto" />
@@ -118,22 +110,6 @@ const styles = StyleSheet.create({
   bory:{
     alignItems: 'center',
     marginTop: 20,
-  },
-  card: {
-    width: '90%',
-    borderRadius:7,
-    borderWidth: 3,
-    borderColor: '#808080',
-    alignItems:'center',
-    padding: 10,
-    backgroundColor: '#ffff',
-    marginBottom: 20
-  },
-  card_title:{
-    fontWeight: 'bold',
-    fontSize: 25,
-  },
-  card_content:{
   },
   info:{
     color: '#000',
