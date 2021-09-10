@@ -10,7 +10,7 @@ export default function App() {
   function handleSocialLink(social){
     switch(social){
       case "github":
-        Alert.alert('Meu GitHub: github/vitor-kemuel')
+        Alert.alert('Meu GitHub: github.com/vitor-kemuel')
       break;
 
       case "linkedin":
