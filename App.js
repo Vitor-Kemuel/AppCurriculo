@@ -12,11 +12,11 @@ export default function App() {
   function handleSocialLink(social){
     switch(social){
       case "github":
-        Alert.alert('Meu GitHub: github.com/vitor-kemuel')
+        Linking.openURL('https://www.github.com/vitor-kemuel')
       break;
 
       case "linkedin":
-        Alert.alert('Meu LinkedIn: linkedin.com/in/vitor-kemuel-965b801bb/')
+        Linking.openURL('https://www.linkedin.com/in/vitor-kemuel-965b801bb/')
       break;
     }
   }
